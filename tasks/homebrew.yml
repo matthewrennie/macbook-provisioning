@@ -4,7 +4,7 @@
   register: brew_installed
 
 - name: Install Homebrew
-  shell: ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   when: brew_installed.stat.exists == false
 
 - name: Tap homebrew/dupes
@@ -15,11 +15,11 @@
   with_items: brews
 
 - name: Check homebrew-cask is installed
-  stat: path=/usr/local/bin/brew-cask.rb
+  stat: path=/usr/local/bin/brew-cask
   register: brew_cask_installed
 
 - name: Install homebrew-cask
-  shell: brew tap phinze/cask && brew install brew-cask
+  shell: brew install brew-cask
   when: brew_cask_installed.stat.exists == false
 
 - name: Check for installed casks
@@ -32,6 +32,3 @@
   shell: brew cask install {{ item }} --appdir={{ application_dir }} --caskroom={{ caskroom_dir }}
   with_items: applications
   when: "item not in installed_applications.results|map(attribute='stdout')"
-
-- name: Modify alfred scope to include caskroom
-  shell: brew cask alfred link --appdir={{ application_dir }} --caskroom={{ caskroom_dir }}

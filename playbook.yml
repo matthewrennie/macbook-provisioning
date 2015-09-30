@@ -2,49 +2,32 @@
 - hosts: all
 
   vars:
-    applications:
-      - alfred
-      - boxer
-      - cord
+    applications:      
       - firefox
-      - google-chrome
-      - gpgtools
-      - handbrake
-      - hipchat
-      - kdiff3
-      - libreoffice
-      - limechat
-      - phpstorm
-      - mou
-      - parallels
+      - google-chrome      
+      - mou      
       - robomongo
       - sequel-pro
-      - sonos
-      - spotify
-      - the-unarchiver
-      - transmit
-      - tunnelblick
-      - vagrant
-      - virtualbox
-      - vlc
-    application_dir: /Applications
+      - spotify      
+      - tunnelblick  
+      - sublime-text    
+      - iterm2
+      - dropbox
+      - slack
+    application_dir: /Users/matthew/Applications
     brews:
-      - ack
-      - chromedriver
       - docker
-      - hub
-      - ios-webkit-debug-proxy
-      - rsync
       - zsh
-    caskroom_dir: /usr/local/caskroom
-    dotfiles_dir: /Users/craig/Code/dotfiles
-    email: EMAIL_HERE
-    github_username: craigmarvelley
-    home_dir: /Users/craig
-    name: Craig Marvelley
+      - tig
+    caskroom_dir: /opt/homebrew-cask/Caskroom/
+    email: EMAIL
+    github_username: matthewrennie
+    home_dir: /Users/matthew
+    name: Matthew Rennie
     zsh_path: /usr/local/bin/zsh
 
   tasks:
     - include: tasks/homebrew.yml tags=homebrew
-    - include: tasks/zsh.yml tags=zsh
-    - include: tasks/dotfiles.yml tags=dotfiles
+    # - include: tasks/zsh.yml tags=zsh
+
+# alias ll='ls -lG' (put it in .bashrc)
