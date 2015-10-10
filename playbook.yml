@@ -14,6 +14,9 @@
       - iterm2
       - dropbox
       - slack
+      - skype
+      - virtualbox
+      - vagrant
     application_dir: /Users/matthew/Applications
     brews:
       - docker
