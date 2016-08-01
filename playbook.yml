@@ -14,14 +14,18 @@
       - iterm2
       - dropbox
       - slack
-      - skype
-      - virtualbox
-      - vagrant
+      - evernote
+      - skitch
+      - joinme
+      - sourcetree
     application_dir: /Users/matthew/Applications
     brews:
       - docker
       - zsh
       - tig
+      - httpie
+      - node
+      - awscli
     caskroom_dir: /opt/homebrew-cask/Caskroom/
     email: EMAIL
     github_username: matthewrennie
@@ -30,7 +34,7 @@
     zsh_path: /usr/local/bin/zsh
 
   tasks:
-    - include: tasks/homebrew.yml tags=homebrew
-    # - include: tasks/zsh.yml tags=zsh
+    # - include: tasks/homebrew.yml tags=homebrew
+    - include: tasks/zsh.yml tags=zsh
 
 # alias ll='ls -lG' (put it in .bashrc)
