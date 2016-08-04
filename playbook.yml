@@ -34,7 +34,7 @@
     zsh_path: /usr/local/bin/zsh
 
   tasks:
-    # - include: tasks/homebrew.yml tags=homebrew
+    - include: tasks/homebrew.yml tags=homebrew
     - include: tasks/zsh.yml tags=zsh
 
 # alias ll='ls -lG' (put it in .bashrc)
